@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Farm Nutrient Input Form</title>
+</head>
+<body>
+     
+    <div class="language-container">
+        <h1>Hello Farmer!</h1>
+        <label for="languageSelect">Select Language:</label>
+        <div id="google_translate_element"></div>
+     
+    </div>
+
+    <div class="container" id="formContainer">
+        <h1 id="formHeading">Farm Nutrient Input Form</h1>
+        <p id="currentDate"></p>
+        <p id="currentMonth"></p>
+        <p id="enterNutrientValues">Please enter nutrient values displayed on the OLED Screen:</p>
+        <form id="nutrientForm">
+            <label for="nitrogen">Nitrogen:</label>
+            <input type="number" id="nitrogen" name="nitrogen" placeholder="Enter Nitrogen value" required>
+
+            <label for="phosphorus">Phosphorus:</label>
+            <input type="number" id="phosphorus" name="phosphorus" placeholder="Enter Phosphorus value" required>
+
+            <label for="potassium">Potassium:</label>
+            <input type="number" id="potassium" name="potassium" placeholder="Enter Potassium value" required>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ 
+                pageLanguage: 'en', // Default page language
+                autoDisplay: false // Disable automatic display of the widget
+            }, 'google_translate_element');
+        }
+    </script>
+</body>
+</html>
